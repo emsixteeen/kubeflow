@@ -37,44 +37,21 @@ export class DashboardView extends PolymerElement {
                 type: Array,
                 value: [
                     {
-                        text: 'Getting Started with Kubeflow',
+                        text: 'Document link #1 [Internal]',
                         desc: 'Get your machine-learning workflow up and ' +
                             'running on Kubeflow',
                         link: `${DOCS}/started/getting-started/`,
                     },
                     {
-                        text: 'MiniKF',
+                        text: 'Document link #2 [Internal]',
                         desc: 'A fast and easy way to deploy Kubeflow locally',
                         link: `${DOCS}/started/getting-started-minikf/`,
                     },
                     {
-                        text: 'Microk8s for Kubeflow',
+                        text: 'Document link #etc...',
                         desc: 'Quickly get Kubeflow running locally on ' +
                             'native hypervisors',
                         link: `${DOCS}/started/getting-started-multipass/`,
-                    },
-                    {
-                        text: 'Minikube for Kubeflow',
-                        desc: 'Quickly get Kubeflow running locally',
-                        link: `${DOCS}/started/getting-started-minikube/`,
-                    },
-                    {
-                        text: 'Kubeflow on GCP',
-                        desc: 'Running Kubeflow on Kubernetes Engine and ' +
-                            'Google Cloud Platform',
-                        link: `${DOCS}/gke/`,
-                    },
-                    {
-                        text: 'Kubeflow on AWS',
-                        desc: 'Running Kubeflow on Elastic Container Service ' +
-                            'and Amazon Web Services',
-                        link: `${DOCS}/aws/`,
-                    },
-                    {
-                        text: 'Requirements for Kubeflow',
-                        desc: 'Get more detailed information about using ' +
-                'Kubeflow and its components',
-                        link: `${DOCS}/started/requirements/`,
                     },
                 ],
             },
