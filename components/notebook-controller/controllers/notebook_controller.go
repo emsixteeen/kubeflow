@@ -375,7 +375,7 @@ func generateVirtualService(instance *v1beta1.Notebook) (*unstructured.Unstructu
 	prefix := fmt.Sprintf("/notebook/%s/%s/", namespace, name)
 	rewrite := fmt.Sprintf("/notebook/%s/%s/", namespace, name)
 	// TODO(gabrielwen): Make clusterDomain an option.
-	service := fmt.Sprintf("%s.%s.svc.cluster.local", name, namespace)
+	service := fmt.Sprintf("%s.%s.svc.gpu-cluster.local", name, namespace)
 
 	vsvc := &unstructured.Unstructured{}
 	vsvc.SetAPIVersion("networking.istio.io/v1alpha3")
