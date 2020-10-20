@@ -16,7 +16,7 @@ import './pipelines-card.js';
 import './resource-chart.js';
 import {getGCPData} from './resources/cloud-platform-data.js';
 
-const DOCS = 'https://www.kubeflow.org/docs';
+//const DOCS = 'https://www.kubeflow.org/docs';
 
 export class DashboardView extends PolymerElement {
     static get template() {
@@ -37,21 +37,29 @@ export class DashboardView extends PolymerElement {
                 type: Array,
                 value: [
                     {
-                        text: 'Document link #1 [Internal]',
-                        desc: 'Get your machine-learning workflow up and ' +
-                            'running on Kubeflow',
-                        link: `${DOCS}/started/getting-started/`,
+                        text: 'Jupyter Notebooks Getting Started',
+                        desc: '',
+                        link: 'https://confluence.fmr.com/display/AICEAC/GPU+Jupyter+Notebooks+Getting+Started',
                     },
                     {
-                        text: 'Document link #2 [Internal]',
-                        desc: 'A fast and easy way to deploy Kubeflow locally',
-                        link: `${DOCS}/started/getting-started-minikf/`,
+                        text: 'Create a ReSolV Custom Container Image',
+                        desc: '',
+                        link: 'https://confluence.fmr.com/display/AICEAC/GPU+Create+a+ReSolV+Custom+Container+Image',
                     },
                     {
-                        text: 'Document link #etc...',
-                        desc: 'Quickly get Kubeflow running locally on ' +
-                            'native hypervisors',
-                        link: `${DOCS}/started/getting-started-multipass/`,
+                        text: 'Docker Container User Workflow',
+                        desc: '',
+                        link: 'https://confluence.fmr.com/display/AICEAC/GPU+Docker+Container+User+Workflow',
+                    },
+                    {
+                        text: 'User Support Open a Ticket',
+                        desc: '',
+                        link: 'https://confluence.fmr.com/display/AICEAC/GPU+User+Support+Open+a+Ticket',
+                    },
+                    {
+                        text: 'Appliance Nvidia Overview',
+                        desc: '',
+                        link: 'https://confluence.fmr.com/display/AICEAC/GPU+Appliance+Nvidia+Overview',
                     },
                 ],
             },
