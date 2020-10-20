@@ -103,8 +103,7 @@ def spawner_ui_config():
             else:
                 # YAML exists and is not empty
                 logger.info("Sending config file '{}'".format(config))
-                settings = yaml.safe_load(c)["spawnerFormDefaults"]
-                return add_existing_pvc(settings)
+                return yaml.safe_load(c)["spawnerFormDefaults"]
         except yaml.YAMLError:
             logger.error("Notebook config is not a valid yaml")
             return {}
@@ -115,34 +114,6 @@ def spawner_ui_config():
 
     logger.warning("Couldn't load any config")
     return {}
-
-def add_existing_pvc(settings):
-    username = get_username_from_request()
-    # temp hack
-    username = "working-directory"
-
-    wsVolume = {
-            "type": {"value": "Existing"},
-            "name": {"value": username},
-            "size": {"value": "1Ti"},
-            "mountPath": {"value": "/home/jovyan"},
-            "accessModes": {"value": "ReadWriteMany"},
-            "class": {"value": "{none}"},
-            }
-
-    dataVolume = {
-            "type": {"value": "Existing"},
-            "name": {"value": username},
-            "size": {"value": "1Ti"},
-            "mountPath": {"value": "/mnt/home"},
-            "accessModes": {"value": "ReadWriteMany"},
-            "class": {"value": "{none}"},
-            }
-
-    settings["workspaceVolume"]["value"] = wsVolume
-    settings["dataVolumes"]["value"] += [{"value": dataVolume}]
-
-    return settings
 
 def get_uptime(then):
     now = dt.datetime.now()
