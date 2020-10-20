@@ -22,6 +22,7 @@ def post_notebook(namespace):
                                      serviceAccount="default-editor")
 
     utils.set_notebook_image(notebook, body, defaults)
+    utils.set_notebook_working_dir(notebook, body, defaults)
     utils.set_notebook_cpu(notebook, body, defaults)
     utils.set_notebook_memory(notebook, body, defaults)
     utils.set_notebook_gpus(notebook, body, defaults)

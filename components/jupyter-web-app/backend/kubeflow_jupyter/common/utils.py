@@ -355,6 +355,21 @@ def set_notebook_image(notebook, body, defaults):
     notebook["spec"]["template"]["spec"]["containers"][0]["image"] = image
 
 
+def set_notebook_working_dir(notebook, body, defaults):
+    container = notebook["spec"]["template"]["spec"]["containers"][0]
+    if body.get("workingDir", ""):
+        workingDir = body["workingDir"]
+        logger.info("Using form's workingDir: " + workingDir)
+    elif "workingDir" in defaults:
+        workingDir = defaults["workingDir"]["value"]
+        logger.info("Using default workingDir: " + workingDir)
+    else:
+        logger.info("Not setting workingDir")
+        return
+
+    container["workingDir"] = workingDir
+
+
 def set_notebook_cpu(notebook, body, defaults):
     container = notebook["spec"]["template"]["spec"]["containers"][0]
 
