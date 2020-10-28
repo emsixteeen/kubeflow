@@ -535,6 +535,12 @@ def add_notebook_volume(notebook, vol_name, claim, mnt_path):
     mnt = {"mountPath": mnt_path, "name": vol_name}
     container["volumeMounts"].append(mnt)
 
+def add_bind_volume(notebook, vol_name, mnt_path):
+    spec = notebook["spec"]["template"]["spec"]
+    container = notebook["spec"]["template"]["spec"]["containers"][0]
+
+    mnt = {"mountPath": mnt_path, "name": vol_name}
+    container["volumeMounts"].append(mnt)
 
 def add_notebook_volume_secret(nb, secret, secret_name, mnt_path, mode):
     # Create the volume in the Pod

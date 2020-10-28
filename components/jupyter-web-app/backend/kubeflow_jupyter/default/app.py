@@ -47,6 +47,12 @@ def post_notebook(namespace):
             "/home/jovyan",
         )
 
+        utils.add_bind_volume(
+            notebook,
+            workspace_vol["name"],
+            "/mnt/home",
+        )
+
     # Add the Data Volumes
     for vol in utils.get_data_vols(body, defaults):
         if vol["type"] == "New":
