@@ -3,7 +3,6 @@ import json
 import logging
 import os
 import sys
-import uuid
 
 import yaml
 from collections import defaultdict
@@ -528,7 +527,6 @@ def set_notebook_shm(notebook, body, defaults):
 def add_notebook_volume(notebook, vol_name, claim, mnt_path):
     spec = notebook["spec"]["template"]["spec"]
     container = notebook["spec"]["template"]["spec"]["containers"][0]
-    vol_name = vol_name + "-" + str(uuid.uuid4())[:6]
 
     volume = {"name": vol_name, "persistentVolumeClaim": {"claimName": claim}}
     spec["volumes"].append(volume)
