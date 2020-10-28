@@ -65,12 +65,14 @@ export class ResourceFormComponent implements OnInit, OnDestroy {
     this.k8s.getDefaultStorageClass().subscribe(defaultClass => {
       if (defaultClass.length === 0) {
         this.defaultStorageclass = false;
+	/*
         this.popup.show(
           "No default Storage Class is set. Can't create new Disks for the " +
             "new Notebook. Please use an Existing Disk.",
           SnackType.Warning,
           0
         );
+        */
       } else {
         this.defaultStorageclass = true;
       }
