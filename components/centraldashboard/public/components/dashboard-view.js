@@ -39,7 +39,7 @@ export class DashboardView extends PolymerElement {
                     {
                         text: 'Jupyter Notebooks Getting Started',
                         desc: '',
-                        link: 'https://confluence.fmr.com/display/AICEAC/GPU+Jupyter+Notebooks+Getting+Started',
+			link: 'https://confluence.fmr.com/display/AICEAC/GPU+Kubeflow+Notebooks+Getting+Started',
                     },
                     {
                         text: 'Create a ReSolV Custom Container Image',
