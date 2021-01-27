@@ -20,3 +20,4 @@ spec:
               memory: "0.1Gi"
       ttlSecondsAfterFinished: 300
       volumes: []
+      securityContext: {{}}
